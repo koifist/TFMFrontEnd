@@ -32,7 +32,10 @@
             <span>{{ user["username"] }}</span>
           </div>
           <div class="col-2 itemList">
-            {{ "constants." + user["role"] | translate }}
+            <mat-chip-list>
+              <mat-chip color="secondary" selected>{{ "constants." + user["role"] | translate }}</mat-chip>
+            </mat-chip-list>
+
           </div>
           <div class="col-5 buttonContainer">
             <button

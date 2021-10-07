@@ -8,7 +8,18 @@ export const environment = {
     updatePass: BASE_URL + '/updatePass',
     deleteUser: BASE_URL + '/deleteUser',
     activateUser: BASE_URL + '/activateUser',
-    updateRole: BASE_URL + '/updateRole'
+    updateRole: BASE_URL + '/updateRole',
+    assetType: BASE_URL + '/assetType',
+    asset: BASE_URL + '/asset',
+    createAsset: BASE_URL + '/createAsset',
+    updateAsset: BASE_URL + '/updateAsset',
+    deleteAsset: BASE_URL + '/deleteAsset',
+    matrix: BASE_URL + '/matrix',
+    incident: BASE_URL + '/incident',
+    createIncident: BASE_URL + '/createIncident',
+    updateIncident: BASE_URL + '/updateIncident',
+    deleteIncident: BASE_URL + '/deleteIncident',
+    closeIncident: BASE_URL + '/closeIncident'
   },
   userRoles: {
     admin: "ADM",
