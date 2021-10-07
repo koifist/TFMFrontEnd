@@ -14,13 +14,13 @@
   <span
     class="ms-4 pointer"
     [routerLink]="['/incidents']"
-    *ngIf="this.user?.role === (env.userRoles.rseg || env.userRoles.admin)">
+    *ngIf="this.user?.isRseg || this.user?.isAdmin">
     {{ "navbar.incidents" | translate }}
   </span>
   <span
   class="ms-4 pointer"
   [routerLink]="['/userManage']"
-  *ngIf="this.user?.role === env.userRoles.admin">
+  *ngIf="this.user?.isAdmin">
     {{ "navbar.userManage" | translate }}
   </span>
   <span class="ms-4 pointer"

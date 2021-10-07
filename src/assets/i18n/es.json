@@ -22,7 +22,7 @@
   "login": {
     "title": "Iniciar Sesión",
     "username": "Nombre de usuario",
-    "password": "contraseña",
+    "password": "Contraseña",
     "register1": "¿No tienes cuenta? ",
     "register2": "Regístrate"
   }

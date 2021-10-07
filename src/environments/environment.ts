@@ -11,10 +11,10 @@ export const environment = {
     updateRole: BASE_URL + '/updateRole'
   },
   userRoles: {
-    admin: "adm",
-    consultor: "con",
-    rsis: "rsi",
-    rseg: "rseg"
+    admin: "ADM",
+    consultor: "CON",
+    rsis: "RSI",
+    rseg: "RSEG"
   },
   baseurl: 'http://localhost:3000'
 };
