@@ -16,16 +16,18 @@ export const environment = {
     deleteAsset: BASE_URL + '/deleteAsset',
     matrix: BASE_URL + '/matrix',
     incident: BASE_URL + '/incident',
+    incidentOpen: BASE_URL + '/incidentOpen',
     createIncident: BASE_URL + '/createIncident',
     updateIncident: BASE_URL + '/updateIncident',
     deleteIncident: BASE_URL + '/deleteIncident',
-    closeIncident: BASE_URL + '/closeIncident'
+    closeIncident: BASE_URL + '/closeIncident',
   },
   userRoles: {
-    admin: "ADM",
-    consultor: "CON",
-    rsis: "RSI",
-    rseg: "RSE"
+    admin: 'ADM',
+    consultor: 'CON',
+    rsis: 'RSI',
+    rseg: 'RSE',
   },
-  baseurl: 'http://localhost:3000'
+  criticality: [1,2,3,4,5],
+  baseurl: 'http://localhost:3000',
 };

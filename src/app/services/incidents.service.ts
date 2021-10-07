@@ -26,6 +26,16 @@ export class IncidentsService {
     });
   }
 
+  getIncidentOpen(asset: string): any {
+    return this.http.get(environment.backendpoints.incidentOpen,  {
+      params: {asset},
+      headers: {
+        'cache-control': 'no-cache',
+        'Content-Type': 'application/json',
+      },
+    });
+  }
+
   createIncident(body: object): any {
     return this.http.post(environment.backendpoints.createIncident, body, {
       headers: {

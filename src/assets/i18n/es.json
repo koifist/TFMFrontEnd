@@ -3,14 +3,36 @@
     "login": "Iniciar Sesión",
     "register": "Registrarse",
     "updatePass": "Cambiar contraseña",
-    "logOut": "Cerrar Sesión"
+    "logOut": "Cerrar Sesión",
+    "filter": "Filtrar",
+    "createAsset": "Crear Activo"
   },
   "constants": {
     "title": "CSIRT Virutal",
     "ADM" : "Administrador",
     "CON": "Consultor",
     "RSI": "R. Sistemas",
-    "RSE": "R. Seguridad"
+    "RSE": "R. Seguridad",
+    "1": "Muy bajo",
+    "2": "Bajo",
+    "3": "Intermedia",
+    "4": "Alta",
+    "5": "Muy alta",
+    "software": "Software",
+    "server": "Servidor",
+    "elementot": "Elemento OT",
+    "userequip": "Equipo de Usuario",
+    "dns": "Dominio",
+    "filters": "Filtros",
+    "status": "Estado",
+    "name": "Nombre",
+    "assetType": "Tipo de activo",
+    "criticality": "Criticidad",
+    "mtd": "MTD",
+    "rto": "RTO",
+    "mtdExtend": "MTD (Máximum Tolerable Downtime)",
+    "rtoExtend": "RTO (Recovery Time Objetive)",
+    "actions": "Acciones"
   },
   "toastr": {
     "unauthorized": "La sesión ha caducado. Inicie sesión de nuevo.",
@@ -25,7 +47,9 @@
     "passSuccess": "Cambio de contraseña completado con éxito.",
     "userrolSuccess": "Cambio de rol de usuario completado con éxito.",
     "useractivationSuccess": "Activación de usuario completada con éxito.",
-    "userdesactivationSuccess": "Desactivación de usuario completada con éxito."
+    "userdesactivationSuccess": "Desactivación de usuario completada con éxito.",
+    "deleteAssetSuccess": "Borrado de activo completado con éxito.",
+    "deleteAssetErrpr": "No se puede borrar el activo ya que tiene abierto el incidente: "
   },
   "navbar" : {
     "login": "Iniciar Sesión",
@@ -62,5 +86,14 @@
     "rols": "Ocupación actual",
     "delete": "Borrar Usuario",
     "activate": "Activar Usuario"
+  },
+  "assets": {
+    "name": "Nombre",
+    "assetType": "Tipo de activo",
+    "criticality": "Criticidad",
+    "status": "Fuera de servicio",
+    "createIncident": "Crear Incidente",
+    "editAsset": "Editar Activo",
+    "deleteAsset": "Borrar Activo"
   }
 }
