@@ -1,7 +1,7 @@
 <div id="profile" class="container-fluid">
   <div class="row mb-5">
     <div class="col-lg-4 m-auto titleContainer">
-      <h2>{{user?.username}}</h2>
+      <h2>{{ user?.username }}</h2>
       <div class="divider">
         <mat-divider></mat-divider>
       </div>
@@ -9,14 +9,15 @@
   </div>
   <div class="formContainer">
     <div class="row">
-      <form
-        class="col-lg-5 m-auto col-sm-12 p-0"
-        [formGroup]="profileForm">
+      <form class="col-8 m-auto" [formGroup]="profileForm">
         <div class="col-12">
           <mat-form-field appearance="fill" class="w-100">
             <mat-label>{{ "profile.password1" | translate }}</mat-label>
-            <input matInput [type]="hide1 ? 'password' : 'text'"
-            formControlName="password">
+            <input
+              matInput
+              [type]="hide1 ? 'password' : 'text'"
+              formControlName="password"
+            />
             <button
               mat-icon-button
               matSuffix
@@ -31,8 +32,11 @@
         <div class="col-12">
           <mat-form-field appearance="fill" class="w-100">
             <mat-label>{{ "profile.password2" | translate }}</mat-label>
-            <input matInput [type]="hide2 ? 'password' : 'text'"
-            formControlName="confirmPassword">
+            <input
+              matInput
+              [type]="hide2 ? 'password' : 'text'"
+              formControlName="confirmPassword"
+            />
             <button
               mat-icon-button
               matSuffix

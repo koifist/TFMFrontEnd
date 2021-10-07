@@ -23,19 +23,29 @@
       <mat-list-item role="listitem" *ngFor="let user of users">
         <div class="w-100 d-flex">
           <div class="col-5 itemList">
-            <mat-icon *ngIf="user['active']" class="color_red pointer" (click)="desactivateUser(user['id'])"
+            <mat-icon
+              *ngIf="user['active']"
+              class="color_red pointer"
+              (click)="desactivateUser(user['id'])"
+              matTooltip="{{ 'admin.delete' | translate }}"
               >delete</mat-icon
             >
-            <mat-icon *ngIf="!user['active']" class="color_green pointer" (click)="activateUser(user['id'])">
+            <mat-icon
+              *ngIf="!user['active']"
+              class="color_green pointer"
+              (click)="activateUser(user['id'])"
+              matTooltip="{{ 'admin.activate' | translate }}"
+            >
               add_box</mat-icon
             >
             <span>{{ user["username"] }}</span>
           </div>
           <div class="col-2 itemList">
             <mat-chip-list>
-              <mat-chip color="secondary" selected>{{ "constants." + user["role"] | translate }}</mat-chip>
+              <mat-chip color="secondary" selected>{{
+                "constants." + user["role"] | translate
+              }}</mat-chip>
             </mat-chip-list>
-
           </div>
           <div class="col-5 buttonContainer">
             <button
