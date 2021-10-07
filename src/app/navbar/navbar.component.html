@@ -2,36 +2,54 @@
   <mat-icon [routerLink]="['/home']" *ngIf="!this.user?.role">home</mat-icon>
   <span class="ms-4">{{ "constants.title" | translate }}</span>
   <span class="example-spacer"></span>
-  <span
-    class="ms-4 pointer"
-    *ngIf="this.user?.role"
-    [routerLink]="['/dashboard']">
-    {{ "navbar.dashboard" | translate }}
-  </span>
-  <span class="ms-4 pointer" [routerLink]="['/assets']" *ngIf="this.user?.role">
-    {{ "navbar.assets" | translate }}
-  </span>
-  <span
-    class="ms-4 pointer"
-    [routerLink]="['/incidents']"
-    *ngIf="this.user?.isRseg || this.user?.isAdmin">
-    {{ "navbar.incidents" | translate }}
-  </span>
-  <span
-  class="ms-4 pointer"
-  [routerLink]="['/userManage']"
-  *ngIf="this.user?.isAdmin">
-    {{ "navbar.userManage" | translate }}
-  </span>
-  <span class="ms-4 pointer"
-  [routerLink]="['/login']"
-  *ngIf="!this.user?.role">
-    {{ "navbar.login" | translate }}
-    </span>
-  <mat-icon
-  class="ms-4"
-  [routerLink]="['/profile']"
-  *ngIf="this.user?.role">
-  account_circle
-</mat-icon>
+  <div class="routeContainer">
+    <div class="route">
+      <span
+        class="ms-4 pointer"
+        *ngIf="this.user?.role"
+        [routerLink]="['/dashboard']"
+      >
+        {{ "navbar.dashboard" | translate }}
+      </span>
+    </div>
+    <div class="route">
+      <span
+        class="ms-4 pointer"
+        [routerLink]="['/assets']"
+        *ngIf="this.user?.role"
+      >
+        {{ "navbar.assets" | translate }}
+      </span>
+    </div>
+    <div class="route">
+      <span
+        class="ms-4 pointer"
+        [routerLink]="['/incidents']"
+        *ngIf="this.user?.isRseg || this.user?.isAdmin"
+      >
+        {{ "navbar.incidents" | translate }}
+      </span>
+    </div>
+    <div class="route">
+      <span
+        class="ms-4 pointer"
+        [routerLink]="['/userManage']"
+        *ngIf="this.user?.isAdmin"
+      >
+        {{ "navbar.userManage" | translate }}
+      </span>
+    </div>
+    <div class="route">
+      <span
+        class="ms-4 pointer"
+        [routerLink]="['/login']"
+        *ngIf="!this.user?.role"
+      >
+        {{ "navbar.login" | translate }}
+      </span>
+    </div>
+  </div>
+  <mat-icon class="ms-4" [routerLink]="['/profile']" *ngIf="this.user?.role">
+    account_circle
+  </mat-icon>
 </mat-toolbar>
