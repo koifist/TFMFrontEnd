@@ -44,6 +44,7 @@ import { AssetsComponent } from './assets/assets.component';
 import { IncidentsComponent } from './incidents/incidents.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { IncidentDetailComponent } from './incident-detail/incident-detail.component';
+import { AssetCreationModalComponent } from './modal/asset-creation-modal/asset-creation-modal.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { IncidentDetailComponent } from './incident-detail/incident-detail.compo
     IncidentsComponent,
     DashboardComponent,
     IncidentDetailComponent,
+    AssetCreationModalComponent,
   ],
   imports: [
     HttpClientModule,
@@ -108,8 +110,9 @@ import { IncidentDetailComponent } from './incident-detail/incident-detail.compo
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptorService,
       multi: true,
-    },
+    }
   ],
+  entryComponents: [AssetCreationModalComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

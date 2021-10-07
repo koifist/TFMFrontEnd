@@ -11,6 +11,8 @@ import { environment } from 'src/environments/environment';
 import { AssetsService } from '../services/assets.service';
 import * as _ from 'lodash';
 import { IncidentsService } from '../services/incidents.service';
+import { MatDialog } from '@angular/material/dialog';
+import { AssetCreationModalComponent } from '../modal/asset-creation-modal/asset-creation-modal.component';
 
 @Component({
   selector: 'app-assets',
@@ -60,7 +62,8 @@ export class AssetsComponent implements OnInit {
     private assetService: AssetsService,
     private incidentService: IncidentsService,
     private router: Router,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private dialog: MatDialog
   ) {
     this.dataSource = new MatTableDataSource<Object>([]);
   }
@@ -112,8 +115,7 @@ export class AssetsComponent implements OnInit {
             }
             return returnedData;
           };
-          this.dataSource.filter = "test",
-          this.loading = false;
+          (this.dataSource.filter = 'test'), (this.loading = false);
         },
         (err: { status: number }) => {
           this.toastr.error(this.translate.instant('toastr.serverError'));
@@ -124,8 +126,35 @@ export class AssetsComponent implements OnInit {
   filter() {
     this.dataSource.filter = 'test';
   }
-  createAsset() {}
-  editAsset(id: string) {}
+  createAsset() {
+    this.dialog
+      .open(AssetCreationModalComponent, {
+        data: {
+          assetTypes: this.assetTypes,
+        },
+      })
+      .afterClosed()
+      .subscribe((result) => {
+        if (result) {
+          this.getAssets();
+        }
+      });
+  }
+  editAsset(asset: object) {
+    this.dialog
+      .open(AssetCreationModalComponent, {
+        data: {
+          asset,
+          assetTypes: this.assetTypes,
+        },
+      })
+      .afterClosed()
+      .subscribe((result) => {
+        if (result) {
+          this.getAssets();
+        }
+      });
+  }
   deleteAsset(id: string) {
     this.checkIncident(id)
       .then((incident: any) => {
@@ -162,7 +191,7 @@ export class AssetsComponent implements OnInit {
         .pipe(first())
         .subscribe(
           (res: any) => {
-              resolve(res);
+            resolve(res);
           },
           (err: { status: number }) => {
             reject();

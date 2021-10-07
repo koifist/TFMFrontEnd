@@ -57,7 +57,7 @@
 
   <div class="row mt-3">
     <div class="col-10 offset-1 createButton" *ngIf="!loading">
-      <button mat-raised-button color="primary" (click)="filter()">
+      <button mat-raised-button color="primary" (click)="createAsset()">
         {{ "buttons.createAsset" | translate }}
       </button>
     </div>
@@ -131,6 +131,7 @@
               class="pointer"
               matTooltip="{{ 'assets.editAsset' | translate }}"
               [matTooltipPosition]="'above'"
+              (click)="editAsset(element)"
               >create</mat-icon
             >
             <mat-icon

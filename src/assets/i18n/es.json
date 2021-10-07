@@ -5,7 +5,9 @@
     "updatePass": "Cambiar contraseña",
     "logOut": "Cerrar Sesión",
     "filter": "Filtrar",
-    "createAsset": "Crear Activo"
+    "createAsset": "Crear Activo",
+    "cancel": "Cancelar",
+    "save": "Guardar"
   },
   "constants": {
     "title": "CSIRT Virutal",
@@ -30,8 +32,8 @@
     "criticality": "Criticidad",
     "mtd": "MTD",
     "rto": "RTO",
-    "mtdExtend": "MTD (Máximum Tolerable Downtime)",
-    "rtoExtend": "RTO (Recovery Time Objetive)",
+    "mtdExtend": "MTD (Máximum Tolerable Downtime) [hrs]",
+    "rtoExtend": "RTO (Recovery Time Objetive) [hrs]",
     "actions": "Acciones"
   },
   "toastr": {
@@ -49,7 +51,11 @@
     "useractivationSuccess": "Activación de usuario completada con éxito.",
     "userdesactivationSuccess": "Desactivación de usuario completada con éxito.",
     "deleteAssetSuccess": "Borrado de activo completado con éxito.",
-    "deleteAssetErrpr": "No se puede borrar el activo ya que tiene abierto el incidente: "
+    "deleteAssetErrpr": "No se puede borrar el activo ya que tiene abierto el incidente: ",
+    "requiredFields": "Rellene todos los campos obligatorios.",
+    "mtdRtoError": "El MTD tiene que ser mayor que el RTO.",
+    "assetCreationSuccess": "El activo se ha creado con éxito",
+    "assetEditionSuccess": "El activo se ha actualizado con éxito"
   },
   "navbar" : {
     "login": "Iniciar Sesión",
@@ -95,5 +101,15 @@
     "createIncident": "Crear Incidente",
     "editAsset": "Editar Activo",
     "deleteAsset": "Borrar Activo"
+  },
+  "assetModal": {
+    "create": "Nuevo Activo",
+    "edit": "Editar Activo",
+    "name": "Nombre*",
+    "assetType": "Tipo de activo*",
+    "criticality": "Criticidad*",
+    "mtd": "MTD* (Máximum Tolerable Downtime) [hrs]",
+    "rto": "RTO* (Recovery Time Objetive) [hrs]",
+    "description": "Descripción*"
   }
 }
