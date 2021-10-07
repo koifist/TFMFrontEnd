@@ -14,7 +14,7 @@ export const environment = {
     admin: "ADM",
     consultor: "CON",
     rsis: "RSI",
-    rseg: "RSEG"
+    rseg: "RSE"
   },
   baseurl: 'http://localhost:3000'
 };

@@ -3,48 +3,28 @@
   <span class="ms-4">{{ "constants.title" | translate }}</span>
   <span class="example-spacer"></span>
   <div class="routeContainer">
-    <div class="route">
-      <span
-        class="ms-4 pointer"
-        *ngIf="this.user?.role"
-        [routerLink]="['/dashboard']"
-      >
+    <div *ngIf="this.user?.role" class="route">
+      <span class="pointer" [routerLink]="['/dashboard']">
         {{ "navbar.dashboard" | translate }}
       </span>
     </div>
-    <div class="route">
-      <span
-        class="ms-4 pointer"
-        [routerLink]="['/assets']"
-        *ngIf="this.user?.role"
-      >
+    <div *ngIf="this.user?.role" class="route">
+      <span class="pointer" [routerLink]="['/assets']">
         {{ "navbar.assets" | translate }}
       </span>
     </div>
-    <div class="route">
-      <span
-        class="ms-4 pointer"
-        [routerLink]="['/incidents']"
-        *ngIf="this.user?.isRseg || this.user?.isAdmin"
-      >
+    <div *ngIf="this.user?.isRseg || this.user?.isAdmin" class="route">
+      <span class="pointer" [routerLink]="['/incidents']">
         {{ "navbar.incidents" | translate }}
       </span>
     </div>
-    <div class="route">
-      <span
-        class="ms-4 pointer"
-        [routerLink]="['/userManage']"
-        *ngIf="this.user?.isAdmin"
-      >
+    <div *ngIf="this.user?.isAdmin" class="route">
+      <span class="pointer" [routerLink]="['/userManage']">
         {{ "navbar.userManage" | translate }}
       </span>
     </div>
-    <div class="route">
-      <span
-        class="ms-4 pointer"
-        [routerLink]="['/login']"
-        *ngIf="!this.user?.role"
-      >
+    <div *ngIf="!this.user?.role" class="route">
+      <span class="pointer" [routerLink]="['/login']">
         {{ "navbar.login" | translate }}
       </span>
     </div>

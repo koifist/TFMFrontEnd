@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { ToastrService } from 'ngx-toastr';
 import { first } from 'rxjs/operators';
 import { UserService } from '../services/user.service';
@@ -19,7 +20,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private toastr: ToastrService,
     private userService: UserService,
-    private router: Router
+    private router: Router,
+    private translate: TranslateService
   ) {}
 
   ngOnInit() {}
@@ -39,17 +41,14 @@ export class LoginComponent implements OnInit {
               'currentUser',
               JSON.stringify(res.currentUser)
             );
-            this.router.navigateByUrl('/assets');
+            this.toastr.success(this.translate.instant("toastr.loginSuccess"));
+            this.router.navigateByUrl('/dashboard');
           },
           (err: { status: number }) => {
             if (err.status === 405) {
-              this.toastr.error(
-                'Tu correo electrónico o la contraseña son incorrectos. Inténtalo de nuevo'
-              );
+              this.toastr.error(this.translate.instant("toastr.loginError"));
             } else {
-              this.toastr.error(
-                'Ha ocurrido un error. Porfavor contacte con el administrador'
-              );
+              this.toastr.error(this.translate.instant("toastr.serverError"));
             }
           }
         );
@@ -58,9 +57,9 @@ export class LoginComponent implements OnInit {
         this.loginForm.get('username')?.errors &&
         this.loginForm.get('username')?.errors?.email
       ) {
-        this.toastr.error('Introduce correctamente el email');
+        this.toastr.error(this.translate.instant("toastr.emailError"));
       } else {
-        this.toastr.warning('Introduce usuario y contraseña');
+        this.toastr.warning(this.translate.instant("toastr.userPassError"));
       }
     }
   }

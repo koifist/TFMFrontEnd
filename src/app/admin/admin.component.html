@@ -1,1 +1,70 @@
-<p>admin works!</p>
+<mat-spinner *ngIf="loading" class="container-fluid mt-5"></mat-spinner>
+<div id="admin" class="container-fluid" *ngIf="!loading">
+  <div class="row mb-5">
+    <div class="col-lg-4 m-auto titleContainer">
+      <h2>{{ "admin.title" | translate }}</h2>
+      <div class="divider">
+        <mat-divider></mat-divider>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <mat-list role="list">
+      <mat-list-item>
+        <div class="w-100 d-flex">
+          <div class="col-5 title">
+            {{ "admin.users" | translate }}
+          </div>
+          <div class="col-3 title">
+            {{ "admin.rols" | translate }}
+          </div>
+        </div>
+      </mat-list-item>
+      <mat-list-item role="listitem" *ngFor="let user of users">
+        <div class="w-100 d-flex">
+          <div class="col-5 itemList">
+            <mat-icon *ngIf="user['active']" class="color_red pointer" (click)="desactivateUser(user['id'])"
+              >delete</mat-icon
+            >
+            <mat-icon *ngIf="!user['active']" class="color_green pointer" (click)="activateUser(user['id'])">
+              add_box</mat-icon
+            >
+            <span>{{ user["username"] }}</span>
+          </div>
+          <div class="col-2 itemList">
+            {{ "constants." + user["role"] | translate }}
+          </div>
+          <div class="col-5 buttonContainer">
+            <button
+              class="ms-3"
+              mat-raised-button
+              color="primary"
+              (click)="changeUserRol(user['id'], env.userRoles.consultor)"
+              *ngIf="user['role'] !== env.userRoles.consultor"
+            >
+              {{ "constants." + env.userRoles.consultor | translate }}
+            </button>
+            <button
+              class="ms-3"
+              mat-raised-button
+              color="primary"
+              (click)="changeUserRol(user['id'], env.userRoles.rsis)"
+              *ngIf="user['role'] !== env.userRoles.rsis"
+            >
+              {{ "constants." + env.userRoles.rsis | translate }}
+            </button>
+            <button
+              class="ms-3"
+              mat-raised-button
+              color="primary"
+              (click)="changeUserRol(user['id'], env.userRoles.rseg)"
+              *ngIf="user['role'] !== env.userRoles.rseg"
+            >
+              {{ "constants." + env.userRoles.rseg | translate }}
+            </button>
+          </div>
+        </div>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>

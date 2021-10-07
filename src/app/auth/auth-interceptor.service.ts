@@ -42,7 +42,7 @@ export class AuthInterceptorService implements HttpInterceptor {
         if (err.status === 401) {
           this.router.navigateByUrl('/login');
           localStorage.clear();
-          this.toastr.warning(this.translate.instant('tooltip.unauthorized'));
+          this.toastr.warning(this.translate.instant('toastr.unauthorized'));
         }
 
         return throwError(err);

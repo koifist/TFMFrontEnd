@@ -1,0 +1,45 @@
+#admin{
+  margin: 90px auto 114px auto;
+  text-align: center;
+}
+.titleContainer{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.divider{
+  width: 200px;
+  height: 3px;;
+}
+.formContainer{
+  width: 600px;
+  margin: auto;
+}
+.title{
+  text-align: left;
+  font-weight: 600;
+  font-size: 16px;
+}
+.itemList{
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+.buttonContainer{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+}
+mat-icon {
+  &.color_green {
+    color: #00ff00;
+  }
+  &.color_red {
+    color: #ff0000;
+  }
+  &.pointer{
+    cursor: pointer;
+  }
+  margin-right: 20px;
+}

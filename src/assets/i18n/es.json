@@ -1,12 +1,31 @@
 {
   "buttons": {
-    "login": "Iniciar Sesión"
+    "login": "Iniciar Sesión",
+    "register": "Registrarse",
+    "updatePass": "Cambiar contraseña",
+    "logOut": "Cerrar Sesión"
   },
   "constants": {
-    "title": "CSIRT Virutal"
+    "title": "CSIRT Virutal",
+    "ADM" : "Administrador",
+    "CON": "Consultor",
+    "RSI": "R. Sistemas",
+    "RSE": "R. Seguridad"
   },
-  "tooltip": {
-    "unauthorized": "La sesión ha caducado. Inicie sesión de nuevo"
+  "toastr": {
+    "unauthorized": "La sesión ha caducado. Inicie sesión de nuevo.",
+    "serverError": "Ha ocurrido un error. Porfavor contacte con el administrador.",
+    "loginError": "Tu correo electrónico o la contraseña son incorrectos. Inténtalo de nuevo.",
+    "loginSuccess": "Inicio de sesión completado con éxito.",
+    "emailError": "Introduce correctamente el email.",
+    "userPassError": "Introduce usuario y contraseña.",
+    "registerError": "El usuario que ha introducido ya existe.",
+    "registerSuccess": "Registro completado con éxito.",
+    "passMatch": "Las contraseñas no coinciden",
+    "passSuccess": "Cambio de contraseña completado con éxito.",
+    "userrolSuccess": "Cambio de rol de usuario completado con éxito.",
+    "useractivationSuccess": "Activación de usuario completada con éxito.",
+    "userdesactivationSuccess": "Desactivación de usuario completada con éxito."
   },
   "navbar" : {
     "login": "Iniciar Sesión",
@@ -25,5 +44,23 @@
     "password": "Contraseña",
     "register1": "¿No tienes cuenta? ",
     "register2": "Regístrate"
+  },
+  "register": {
+    "title": "Crear una cuenta",
+    "username": "Correo Electrónico",
+    "password1": "Contraseña",
+    "password2": "Repetir Contraseña"
+  },
+  "profile": {
+    "title": "Cambiar contraseña",
+    "password1": "Contraseña",
+    "password2": "Repetir Contraseña"
+  },
+  "admin": {
+    "title": "Listado de usuarios",
+    "users": "Usuarios",
+    "rols": "Ocupación actual",
+    "delete": "Borrar Usuario",
+    "activate": "Activar Usuario"
   }
 }
