@@ -1,0 +1,44 @@
+.home {
+  height: 100%;
+  .head {
+    position: relative;
+    .title {
+      color: #fff;
+    }
+  }
+  .subtitleContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    .subtitle{
+      font-size: 30px;
+      font-weight: 600;
+    }
+  }
+
+}
+@media (max-width: 1149px) {
+  .title{
+    font-size: 50px;
+    bottom: 100px;
+    line-height: 70px;
+  }
+}
+@media (min-width: 1150px) and (max-width: 1599px) {
+  .title{
+    font-size: 100px;
+    bottom: 150px;
+    line-height: 100px;
+  }
+}
+@media (min-width: 1600px) {
+  .title{
+    font-size: 140px;
+    bottom: 250px;
+    line-height: 150px;
+  }
+}
+
+

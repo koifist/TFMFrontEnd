@@ -1,0 +1,13 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+mat-icon{
+  cursor: pointer;
+}
+.pointer {
+  cursor: pointer;
+  border-bottom: 1px solid #FFF;
+}
+.pointer:hover {
+  border-bottom: 2px solid #FFF;
+}

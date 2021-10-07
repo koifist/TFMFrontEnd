@@ -1,0 +1,29 @@
+{
+  "buttons": {
+    "login": "Iniciar Sesión"
+  },
+  "constants": {
+    "title": "CSIRT Virutal"
+  },
+  "tooltip": {
+    "unauthorized": "La sesión ha caducado. Inicie sesión de nuevo"
+  },
+  "navbar" : {
+    "login": "Iniciar Sesión",
+    "assets": "Activos",
+    "incidents": "Incidentes",
+    "userManage": "Gestión de usuarios",
+    "dashboard": "Panel"
+  },
+  "home": {
+    "title": "<pre> CSIRT<br>    Virtual<pre>",
+    "subtitle": "Trabajo Académico Fernando González Martínez"
+  },
+  "login": {
+    "title": "Iniciar Sesión",
+    "username": "Nombre de usuario",
+    "password": "contraseña",
+    "register1": "¿No tienes cuenta? ",
+    "register2": "Regístrate"
+  }
+}

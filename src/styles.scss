@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+html{
+  min-height: 100%;
+  height: 100%;
+}
+body{
+  font-family: "Roboto", sans-serif !important;
+  display: block;
+  min-height: 100%;
+  height: 100%;
+}
+app-root {
+  display: block;
+  height: 100%;
+}
+.black_hr {
+  border: solid 1px #000;
+  width: 80px;
+  height: 1px;
+  background-color: #000;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
