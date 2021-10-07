@@ -18,7 +18,7 @@
         {{ "navbar.incidents" | translate }}
       </span>
     </div>
-    <div *ngIf="this.user?.isAdmin" class="route">
+    <div *ngIf="this.user?.isAdmin" class="lastRoute">
       <span class="pointer" [routerLink]="['/userManage']">
         {{ "navbar.userManage" | translate }}
       </span>
