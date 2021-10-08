@@ -28,6 +28,7 @@ export class IncidentDetailComponent implements OnInit {
   public asset: any;
   public matrix: any;
   public techniques: any;
+  public disabled = false;
   public tabIndex = 0;
   constructor(
     private toastr: ToastrService,
@@ -62,8 +63,14 @@ export class IncidentDetailComponent implements OnInit {
         } else {
           this.userService.logOut();
         }
+        if(params.disabled){
+          this.disabled = true;
+        }
       }
     );
+  }
+  back() {
+    this.router.navigate(['/incidents']);
   }
   changetab(index: number) {
     this.tabIndex = index;
@@ -72,10 +79,13 @@ export class IncidentDetailComponent implements OnInit {
     return this.techniques.includes(id);
   }
   selectTechnique(id:string){
-    if(this.isTechniqueSelected(id)){
-      this.techniques = _.pull(this.techniques, id)
-    } else {
-      this.techniques.push(id);
+    if(!this.disabled){
+      if(this.isTechniqueSelected(id)){
+        this.techniques = _.pull(this.techniques, id)
+      } else {
+        this.techniques.push(id);
+      }
+
     }
   }
   getMatrix() {
@@ -106,7 +116,7 @@ export class IncidentDetailComponent implements OnInit {
               this.toastr.success(
                 this.translate.instant('toastr.incidentEditionSuccess')
               );
-              this.router.navigate(['/incidents']);
+              this.back();
             },
             (err: { status: number }) => {
               this.toastr.error(this.translate.instant('toastr.serverError'));
@@ -121,7 +131,7 @@ export class IncidentDetailComponent implements OnInit {
               this.toastr.success(
                 this.translate.instant('toastr.incidentCreationSuccess')
               );
-              this.router.navigate(['/incidents']);
+              this.back();
             },
             (err: { status: number }) => {
               this.toastr.error(this.translate.instant('toastr.serverError'));

@@ -147,6 +147,10 @@ export class IncidentsComponent implements OnInit {
     let incidentStr = JSON.stringify(incident);
     this.router.navigate(['/incidentDetail'], {queryParams: {incident: incidentStr},  skipLocationChange: true })
   }
+  showIncident(incident: object) {
+    let incidentStr = JSON.stringify(incident);
+    this.router.navigate(['/incidentDetail'], {queryParams: {incident: incidentStr, disabled: true},  skipLocationChange: true })
+  }
   deleteIncident(id: string) {
     this.incidentService
       .deleteIncident(id)

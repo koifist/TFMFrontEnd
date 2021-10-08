@@ -8,7 +8,8 @@
     "createAsset": "Crear Activo",
     "cancel": "Cancelar",
     "save": "Guardar",
-    "next": "Siguiente"
+    "next": "Siguiente",
+    "exit": "Salir"
   },
   "constants": {
     "title": "CSIRT Virutal",
@@ -127,7 +128,8 @@
     "availability": "Disponibilidad",
     "editIncident": "Editar Incidente",
     "closeIncident": "Cerrar Incidente",
-    "deleteIncident": "Borrar Incidente"
+    "deleteIncident": "Borrar Incidente",
+    "showIncident": "Ver Incidente"
   },
   "incidentDetail": {
     "label1":"incidente",
