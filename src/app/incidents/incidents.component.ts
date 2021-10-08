@@ -143,7 +143,10 @@ export class IncidentsComponent implements OnInit {
   filter() {
     this.dataSource.filter = 'test';
   }
-  editIncident(incident: object) {}
+  editIncident(incident: object) {
+    let incidentStr = JSON.stringify(incident);
+    this.router.navigate(['/incidentDetail'], {queryParams: {incident: incidentStr},  skipLocationChange: true })
+  }
   deleteIncident(id: string) {
     this.incidentService
       .deleteIncident(id)
@@ -151,7 +154,7 @@ export class IncidentsComponent implements OnInit {
       .subscribe(
         (res: any) => {
           this.toastr.success(
-            this.translate.instant('toastr.deleteAssetSuccess')
+            this.translate.instant('toastr.deleteIncidentSuccess')
           );
           this.getIncidents();
         },
@@ -167,7 +170,7 @@ export class IncidentsComponent implements OnInit {
       .subscribe(
         (res: any) => {
           this.toastr.success(
-            this.translate.instant('toastr.deleteAssetSuccess')
+            this.translate.instant('toastr.closeIncidentSuccess')
           );
           this.getIncidents();
         },

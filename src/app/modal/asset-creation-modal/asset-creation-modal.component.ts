@@ -34,6 +34,7 @@ export class AssetCreationModalComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.data?.asset) {
+      this.assetForm.get('id')?.setValue(this.data?.asset?.id);
       this.assetForm.get('name')?.setValue(this.data?.asset?.name);
       this.assetForm
         .get('assetType')

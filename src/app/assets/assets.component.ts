@@ -129,7 +129,6 @@ export class AssetsComponent implements OnInit {
         }
       );
   }
-  inicialiceTable() {}
   filter() {
     this.dataSource.filter = 'test';
   }
@@ -190,7 +189,21 @@ export class AssetsComponent implements OnInit {
         this.toastr.error(this.translate.instant('toastr.serverError'));
       });
   }
-  createIncident(id: string) {}
+  createIncident(asset: any) {
+    this.checkIncident(asset.id)
+      .then((incident: any) => {
+        if (incident && incident?.id) {
+          let incidentStr = JSON.stringify(incident);
+          this.router.navigate(['/incidentDetail'], {queryParams: {incident: incidentStr},  skipLocationChange: true })
+        } else {
+          let assetStr = JSON.stringify(asset);
+          this.router.navigate(['/incidentDetail'], {queryParams: {asset: assetStr},  skipLocationChange: true })
+        }
+      })
+      .catch((err) => {
+        this.toastr.error(this.translate.instant('toastr.serverError'));
+      });
+  }
   checkIncident(id: string) {
     return new Promise((resolve, reject) => {
       this.incidentService

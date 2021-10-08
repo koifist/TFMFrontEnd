@@ -130,6 +130,7 @@
               class="pointer"
               matTooltip="{{ 'assets.createIncident' | translate }}"
               [matTooltipPosition]="'above'"
+              (click)="createIncident(element)"
               *ngIf="user?.isRseg || user?.isAdmin"
               >bug_report</mat-icon
             >

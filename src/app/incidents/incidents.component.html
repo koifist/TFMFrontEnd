@@ -151,7 +151,7 @@
               matTooltip="{{ 'incident.editIncident' | translate }}"
               [matTooltipPosition]="'above'"
               (click)="editIncident(element)"
-              *ngIf="user?.isRseg || user?.isAdmin"
+              *ngIf="(user?.isRseg || user?.isAdmin) && !element.dateEnd"
               >create</mat-icon
             >
             <mat-icon
@@ -159,7 +159,7 @@
               matTooltip="{{ 'incident.closeIncident' | translate }}"
               [matTooltipPosition]="'above'"
               (click)="closeIncident(element.id)"
-              *ngIf="user?.isRseg || user?.isAdmin"
+              *ngIf="(user?.isRseg || user?.isAdmin) && !element.dateEnd"
               >build</mat-icon
             >
             <mat-icon

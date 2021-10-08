@@ -7,7 +7,8 @@
     "filter": "Filtrar",
     "createAsset": "Crear Activo",
     "cancel": "Cancelar",
-    "save": "Guardar"
+    "save": "Guardar",
+    "next": "Siguiente"
   },
   "constants": {
     "title": "CSIRT Virutal",
@@ -55,7 +56,11 @@
     "requiredFields": "Rellene todos los campos obligatorios.",
     "mtdRtoError": "El MTD tiene que ser mayor que el RTO.",
     "assetCreationSuccess": "El activo se ha creado con éxito",
-    "assetEditionSuccess": "El activo se ha actualizado con éxito"
+    "assetEditionSuccess": "El activo se ha actualizado con éxito",
+    "deleteIncidentSuccess": "Borrado de incidente completado con éxito.",
+    "closeIncidentSuccess": "Incidente cerrado con éxito.",
+    "incidentCreationSuccess": "El incidente se ha creado con éxito",
+    "incidentEditionSuccess": "El incidente se ha actualizado con éxito"
   },
   "navbar" : {
     "login": "Iniciar Sesión",
@@ -123,5 +128,15 @@
     "editIncident": "Editar Incidente",
     "closeIncident": "Cerrar Incidente",
     "deleteIncident": "Borrar Incidente"
+  },
+  "incidentDetail": {
+    "label1":"incidente",
+    "label2":"mitre att&ck",
+    "name": "Nombre",
+    "nameAsset": "Nombre del activo",
+    "confidentiality": "Confidencialidad",
+    "integrity": "Integridad",
+    "description": "Descripción",
+    "availability": "Disponibilidad"
   }
 }
