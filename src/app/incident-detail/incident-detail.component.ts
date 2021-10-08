@@ -21,8 +21,8 @@ export class IncidentDetailComponent implements OnInit {
     confidentiality: new FormControl(false),
     integrity: new FormControl(false),
     availability: new FormControl(false),
-    techniques: new FormControl('', Validators.required),
-    description: new FormControl('', Validators.required),
+    techniques: new FormControl([]),
+    description: new FormControl(''),
   });
   public loadingMatrix = true;
   public asset: any;

@@ -45,6 +45,7 @@ import { IncidentsComponent } from './incidents/incidents.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { IncidentDetailComponent } from './incident-detail/incident-detail.component';
 import { AssetCreationModalComponent } from './modal/asset-creation-modal/asset-creation-modal.component';
+import {ChartsModule} from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -101,7 +102,8 @@ import { AssetCreationModalComponent } from './modal/asset-creation-modal/asset-
     MatSortModule,
     MatTableModule,
     MatTabsModule,
-    MatTooltipModule
+    MatTooltipModule,
+    ChartsModule
 
   ],
   exports: [ReactiveFormsModule],

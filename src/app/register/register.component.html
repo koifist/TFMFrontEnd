@@ -23,8 +23,10 @@
               matInput
               [type]="hide1 ? 'password' : 'text'"
               formControlName="password"
+              (keydown.enter)="$event.preventDefault()"
             />
             <button
+              (keydown.enter)="$event.preventDefault()"
               mat-icon-button
               matSuffix
               (click)="hide1 = !hide1"
@@ -42,6 +44,7 @@
               matInput
               [type]="hide2 ? 'password' : 'text'"
               formControlName="confirmPassword"
+              (keydown.enter)="register(); $event.preventDefault()"
             />
             <button
               mat-icon-button
@@ -49,6 +52,7 @@
               (click)="hide2 = !hide2"
               [attr.aria-label]="'Hide password'"
               [attr.aria-pressed]="hide2"
+              (keydown.enter)="$event.preventDefault()"
             >
               <mat-icon>{{ hide2 ? "visibility_off" : "visibility" }}</mat-icon>
             </button>

@@ -21,6 +21,7 @@ export const environment = {
     updateIncident: BASE_URL + '/updateIncident',
     deleteIncident: BASE_URL + '/deleteIncident',
     closeIncident: BASE_URL + '/closeIncident',
+    dashboard: BASE_URL + '/dashboard'
   },
   userRoles: {
     admin: 'ADM',

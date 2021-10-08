@@ -114,9 +114,9 @@
     "name": "Nombre*",
     "assetType": "Tipo de activo*",
     "criticality": "Criticidad*",
-    "mtd": "MTD* (Máximum Tolerable Downtime) [hrs]",
-    "rto": "RTO* (Recovery Time Objetive) [hrs]",
-    "description": "Descripción*"
+    "mtd": "MTD (Máximum Tolerable Downtime) [hrs]",
+    "rto": "RTO (Recovery Time Objetive) [hrs]",
+    "description": "Descripción"
   },
   "incident": {
     "status": "En proceso",
@@ -134,11 +134,16 @@
   "incidentDetail": {
     "label1":"incidente",
     "label2":"mitre att&ck",
-    "name": "Nombre",
-    "nameAsset": "Nombre del activo",
+    "name": "Nombre*",
+    "nameAsset": "Nombre del activo*",
     "confidentiality": "Confidencialidad",
     "integrity": "Integridad",
     "description": "Descripción",
     "availability": "Disponibilidad"
+  },
+  "dashboard": {
+    "titleIncMonth": "Incidentes en el último mes",
+    "titleIncAssetType": "Incidentes por tipo de activo",
+    "titleAssetsDisa": "Activos fuera de servicio"
   }
 }

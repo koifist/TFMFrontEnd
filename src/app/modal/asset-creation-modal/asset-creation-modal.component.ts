@@ -18,9 +18,9 @@ export class AssetCreationModalComponent implements OnInit {
     name: new FormControl('', [Validators.required]),
     assetType: new FormControl('', Validators.required),
     criticality: new FormControl('', Validators.required),
-    mtd: new FormControl('', Validators.required),
-    rto: new FormControl('', Validators.required),
-    description: new FormControl('', Validators.required),
+    mtd: new FormControl(''),
+    rto: new FormControl(''),
+    description: new FormControl(''),
   });
   public assetTypes = this.data.assetTypes;
   public criticality = environment.criticality;

@@ -1,1 +1,101 @@
-<p>dashboard works!</p>
+<mat-spinner *ngIf="loading" class="container-fluid mt-5"></mat-spinner>
+<div class="container-fluid">
+  <div class="row" *ngIf="!loading">
+    <div class="col-lg-6 col-sm-12 mt-3">
+      <h1>{{ "dashboard.titleIncMonth" | translate }}</h1>
+      <mat-card class="mat-elevation-z8">
+        <canvas baseChart
+                [datasets]="incMonthData"
+                [labels]="incMonthLabels"
+                [options]="incMonthOptions"
+                [legend]="incMonthLegend"
+                [chartType]="incMonthType"
+                [colors]="incMonthColors">
+        </canvas>
+
+      </mat-card>
+    </div>
+    <div class="col-lg-6 col-sm-12 mt-3">
+      <h1>{{ "dashboard.titleIncAssetType" | translate }}</h1>
+      <mat-card class="mat-elevation-z8">
+        <canvas baseChart
+                [datasets]="incAssetData"
+                [labels]="incAssetLabels"
+                [options]="incAssetOptions"
+                [legend]="incAssetLegend"
+                [chartType]="incAssetType"
+                [colors]="incAssetColors">
+        </canvas>
+      </mat-card>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-12">
+      <h1>{{ "dashboard.titleAssetsDisa" | translate }}</h1>
+      <table
+        mat-table
+        [dataSource]="dataSource"
+        matSort
+        class="w-100 mat-elevation-z8"
+        *ngIf="!loading"
+      >
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            {{ "constants.status" | translate }}
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <mat-icon class="color_green" *ngIf="element?.status"
+              >check_circle</mat-icon
+            >
+            <mat-icon class="color_red" *ngIf="!element?.status"
+              >offline_bolt</mat-icon
+            >
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            {{ "constants.name" | translate }}
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element?.name }}</td>
+        </ng-container>
+        <ng-container matColumnDef="assetType">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            {{ "constants.assetType" | translate }}
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ "constants." + element["assetType"]["name"] | translate }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="criticality">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            {{ "constants.criticality" | translate }}
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ "constants." + element.criticality | translate }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="mtd">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            {{ "constants.mtd" | translate }}
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element?.mtd }}</td>
+        </ng-container>
+        <ng-container matColumnDef="rto">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            {{ "constants.rto" | translate }}
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element?.rto }}</td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+      <mat-paginator
+        [pageSizeOptions]="[5, 10, 20]"
+        [pageSize]="10"
+        showFirstLastButtons
+        [hidden]="loading"
+      >
+      </mat-paginator>
+    </div>
+  </div>
+</div>

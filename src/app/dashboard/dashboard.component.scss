@@ -1,0 +1,16 @@
+.card{
+  padding: 40px;
+}
+
+mat-icon {
+  &.color_green {
+    color: #00ff00;
+  }
+  &.color_red {
+    color: #ff0000;
+  }
+  &.pointer{
+    cursor: pointer;
+  }
+  margin-right: 20px;
+}

@@ -23,11 +23,13 @@
               matInput
               [type]="hide ? 'password' : 'text'"
               formControlName="password"
+              (keydown.enter)="login();$event.preventDefault();"
             />
             <button
               mat-icon-button
               matSuffix
               (click)="hide = !hide"
+              (keydown.enter)="$event.preventDefault();"
               [attr.aria-label]="'Hide password'"
               [attr.aria-pressed]="hide"
             >
