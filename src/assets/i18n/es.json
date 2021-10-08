@@ -111,5 +111,17 @@
     "mtd": "MTD* (Máximum Tolerable Downtime) [hrs]",
     "rto": "RTO* (Recovery Time Objetive) [hrs]",
     "description": "Descripción*"
+  },
+  "incident": {
+    "status": "En proceso",
+    "name": "Nombre",
+    "nameAsset": "Nombre del activo",
+    "assetType": "Tipo de activo",
+    "confidentiality": "Confidencialidad",
+    "integrity": "Integridad",
+    "availability": "Disponibilidad",
+    "editIncident": "Editar Incidente",
+    "closeIncident": "Cerrar Incidente",
+    "deleteIncident": "Borrar Incidente"
   }
 }

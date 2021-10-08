@@ -32,6 +32,7 @@ export class AssetsComponent implements OnInit {
   dataSource = new MatTableDataSource<Object>([]);
   private paginator!: MatPaginator;
   private sort!: MatSort;
+  public user: any;
   @ViewChild(MatPaginator) set matPaginator(mp: MatPaginator) {
     this.paginator = mp;
     this.setDataSourceAttributes();
@@ -65,9 +66,15 @@ export class AssetsComponent implements OnInit {
     private translate: TranslateService,
     private dialog: MatDialog
   ) {
-    this.dataSource = new MatTableDataSource<Object>([]);
   }
   ngOnInit(): void {
+    this.dataSource = new MatTableDataSource<Object>([]);
+    const user = localStorage.getItem('currentUser');
+    if (user) {
+      this.user = JSON.parse(user);
+    } else {
+      this.user = '';
+    }
     this.getAssetsTypes();
     this.getAssets();
   }
