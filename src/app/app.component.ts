@@ -13,4 +13,9 @@ export class AppComponent {
     translate.setDefaultLang('es');
     moment.locale('es');
   }
+
+  ngDoCheck(): void {
+    moment.locale(navigator.language.slice(0,2));
+    this.translate.use(navigator.language.slice(0,2));
+  }
 }

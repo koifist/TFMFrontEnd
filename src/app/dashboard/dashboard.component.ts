@@ -118,6 +118,7 @@ export class DashboardComponent implements OnInit {
     'name',
     'assetType',
     'criticality',
+    'date',
     'mtd',
     'rto',
   ];
@@ -183,15 +184,28 @@ export class DashboardComponent implements OnInit {
         }
       );
   }
-  setAssets(assets: any) {
-    this.dataSource = new MatTableDataSource<Object>(assets);
+  setAssets(incidents: any) {
+    const assetFormated = this.formatAssets(incidents);
+    this.dataSource = new MatTableDataSource<Object>(assetFormated);
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+  }
+  formatAssets(incidents: any){
+    _.forEach(incidents, (incident) => {
+      const hourDiff = moment().diff(moment(incident.dateInit), 'hours');
+      if(hourDiff > incident.asset.mtd){
+        incident.mtdExceeded = true;
+      } else if (hourDiff > incident.asset.rto){
+        incident.rtoExceeded = true;
+      }
+      incident.dateInitStr = moment(incident.dateInit).format('YYYY-MM-DD HH:mm');
+    });
+    return incidents;
   }
   setIncMonthData(data: any) {
     this.incMonthData = [{ data: _.map(data, 'value'), label: 'Amazon' }];
     this.incMonthLabels = _.map(data, (elem) => {
-      return moment(elem['label']).locale(navigator.language).format('L');
+      return moment(elem['label']).locale(navigator.language.slice(0,2)).format('L');
     });
   }
   setIncAssetData(data: any) {

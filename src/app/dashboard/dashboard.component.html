@@ -41,14 +41,20 @@
       >
         <ng-container matColumnDef="status">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>
-            {{ "constants.status" | translate }}
+            {{ "constants.urgency" | translate }}
           </th>
           <td mat-cell *matCellDef="let element">
-            <mat-icon class="color_green" *ngIf="element?.status"
-              >check_circle</mat-icon
+            <mat-icon class="color_red" *ngIf="element.mtdExceeded"
+            matTooltip="{{ 'constants.4' | translate }}"
+              >trending_up</mat-icon
             >
-            <mat-icon class="color_red" *ngIf="!element?.status"
-              >offline_bolt</mat-icon
+            <mat-icon class="color_ambar" *ngIf="element?.rtoExceeded"
+            matTooltip="{{ 'constants.3' | translate }}"
+              >trending_up</mat-icon
+            >
+            <mat-icon class="color_green" *ngIf="!element?.mtdExceeded && !element?.rtoExceeded!"
+            matTooltip="{{ 'constants.2' | translate }}"
+              >trending_up</mat-icon
             >
           </td>
         </ng-container>
@@ -56,14 +62,14 @@
           <th mat-header-cell *matHeaderCellDef mat-sort-header>
             {{ "constants.name" | translate }}
           </th>
-          <td mat-cell *matCellDef="let element">{{ element?.name }}</td>
+          <td mat-cell *matCellDef="let element">{{ element.asset.name }}</td>
         </ng-container>
         <ng-container matColumnDef="assetType">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>
             {{ "constants.assetType" | translate }}
           </th>
           <td mat-cell *matCellDef="let element">
-            {{ "constants." + element["assetType"]["name"] | translate }}
+            {{ "constants." + element["asset"]["assetType"]["name"] | translate }}
           </td>
         </ng-container>
         <ng-container matColumnDef="criticality">
@@ -71,20 +77,26 @@
             {{ "constants.criticality" | translate }}
           </th>
           <td mat-cell *matCellDef="let element">
-            {{ "constants." + element.criticality | translate }}
+            {{ "constants." + element.asset.criticality | translate }}
           </td>
+        </ng-container>
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            {{ "constants.dateDown" | translate }}
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.dateInitStr }}</td>
         </ng-container>
         <ng-container matColumnDef="mtd">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>
             {{ "constants.mtd" | translate }}
           </th>
-          <td mat-cell *matCellDef="let element">{{ element?.mtd }}</td>
+          <td mat-cell *matCellDef="let element">{{ element.asset.mtd }}</td>
         </ng-container>
         <ng-container matColumnDef="rto">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>
             {{ "constants.rto" | translate }}
           </th>
-          <td mat-cell *matCellDef="let element">{{ element?.rto }}</td>
+          <td mat-cell *matCellDef="let element">{{ element.asset.rto }}</td>
         </ng-container>
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>

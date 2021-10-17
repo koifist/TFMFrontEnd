@@ -1,2 +1,156 @@
 {
+  "buttons": {
+    "login": "Login",
+    "register": "Register",
+    "updatePass": "Change password",
+    "logOut": "Logout",
+    "filter": "Filter",
+    "createAsset": "Create Asset",
+    "cancel": "Cancel",
+    "save": "Save",
+    "next": "Next",
+    "exit": "Exit"
+  },
+  "constants": {
+    "title" : "CSIRT Virutal",
+    "ADM" : "Administrator",
+    "CON": "Consultant",
+    "RSI" : "R. Systems",
+    "RSE": "R. Security",
+    "1": "Very low",
+    "2": "Low",
+    "3": "Intermediate",
+    "4": "High",
+    "5": "Very high",
+    "software": "Software",
+    "service": "Service",
+    "information": "Data/Information",
+    "userequip": "Computer equipment",
+    "personal": "Personal",
+    "network": "Communication Network",
+    "carrier": "Information Support",
+    "auxequip": "Auxiliary Equipment",
+    "instalation": "Installation",
+    "intangible": "Intangible",
+    "filters": "Filters",
+    "status": "Status",
+    "name": "Name",
+    "assetType": "Asset Type",
+    "criticality": "criticality",
+    "mtd": "MTD",
+    "rto": "RTO",
+    "mtdExtend": "MTD (Maximum Tolerable Downtime) [hrs]",
+    "rtoExtend": "RTO (Recovery Time Objective) [hrs]",
+    "actions": "Actions",
+    "urgency": "Urgency",
+    "dateDown": "Date Incident"
+  },
+  "toastr": {
+    "unauthorized": "Your session has timed out. Please log in again",
+    "serverError": "An error has occurred. Please contact the administrator.",
+    "loginError": "Your email or password is incorrect. Please try again",
+    "loginSuccess": "Login completed successfully.",
+    "emailError": "Enter email correctly.",
+    "userPassError": "Enter username and password.",
+    "registerError": "The user you have entered already exists.",
+    "registerSuccess": "Registration completed successfully.",
+    "passMatch": "The passwords do not match",
+    "passSuccess": "Password change completed successfully.",
+    "userrolSuccess": "User role change completed successfully.",
+    "useractivationSuccess": "User activation successfully completed.",
+    "userdeactivationSuccess": "User deactivation successfully completed",
+    "deleteAssetSuccess": "Deletion of asset successfully completed.",
+    "deleteAssetErrpr": "Unable to delete asset as it has open incident:",
+    "requiredFields": "Fill in all required fields.",
+    "mtdRtoError": "The MTD has to be greater than the RTO.",
+    "assetCreationSuccess": "The asset has been successfully created.",
+    "assetEditionSuccess": "The asset has been successfully updated",
+    "deleteIncidentSuccess": "Deletion of incident completed successfully",
+    "closeIncidentSuccess": "Incident successfully closed.",
+    "incidentCreationSuccess": "Incident has been created successfully.",
+    "incidentEditionSuccess": "Incident has been successfully updated"
+  },
+  "navbar" : {
+    "login": "Login",
+    "assets" : "Assets",
+    "incidents" : "Incidents",
+    "userManage" : "User Management",
+    "dashboard": "Dashboard"
+  },
+  "home": {
+    "title": "<pre> CSIRT<br> Virtual<pre>",
+    "subtitle": "Fernando González Martínez Academic Work"
+  },
+  "login": {
+    "title": "Login",
+    "username": "Username",
+    "password": "Password",
+    "register1": "Don't have an account? ",
+    "register2": "Register"
+  },
+  "register": {
+    "title": "Create an account",
+    "username": "Email",
+    "password1": "Password",
+    "password2": "Repeat Password"
+  },
+  "profile": {
+    "title": "Change Password",
+    "password1": "Password",
+    "password2": "Repeat Password"
+  },
+  "admin": {
+    "title": "List of users",
+    "users": "Users",
+    "rols": "Current Occupation",
+    "delete": "Delete User",
+    "activate": "Activate User"
+  },
+  "assets": {
+    "name": "Name",
+    "assetType": "Asset Type",
+    "criticality": "criticality",
+    "status": "Out of Service",
+    "createIncident": "Create Incident",
+    "editAsset": "Edit Asset",
+    "deleteAsset": "Delete Asset"
+  },
+  "assetModal": {
+    "create": "New Asset",
+    "edit": "Edit Asset",
+    "name": "Name*",
+    "assetType": "Asset Type*",
+    "criticality": "Criticality*",
+    "mtd": "MTD (Maximum Tolerable Downtime) [hrs]",
+    "rto": "RTO (Recovery Time Objetive) [hrs]",
+    "description": "Description"
+  },
+  "incident": {
+    "status": "In process",
+    "name": "Name",
+    "nameAsset": "Asset name",
+    "assetType": "Asset Type",
+    "confidentiality": "Confidentiality",
+    "integrity": "Integrity",
+    "availability": "Availability",
+    "editIncident": "Edit Incident",
+    "closeIncident": "Close Incident",
+    "deleteIncident": "Delete Incident",
+    "showIncident": "View Incident"
+  },
+  "incidentDetail": {
+    "label1": "incident",
+    "label2": "mitre att&ck",
+    "name": "Name*",
+    "nameAsset": "Asset Name*",
+    "confidentiality": "Confidentiality",
+    "integrity":"Integrity",
+    "description": "Description",
+    "availability": "Availability"
+  },
+  "dashboard": {
+    "titleIncMonth": "Incidents in the last month",
+    "titleIncAssetType": "Incidents by asset type",
+    "titleAssetsDisa": "Assets out of service"
+  }
 }
