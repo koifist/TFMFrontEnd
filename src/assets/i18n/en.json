@@ -15,8 +15,8 @@
     "title" : "CSIRT Virutal",
     "ADM" : "Administrator",
     "CON": "Consultant",
-    "RSI" : "R. Systems",
-    "RSE": "R. Security",
+    "RSI" : "Systems R.",
+    "RSE": "Security R.",
     "1": "Very low",
     "2": "Low",
     "3": "Intermediate",
@@ -43,7 +43,10 @@
     "rtoExtend": "RTO (Recovery Time Objective) [hrs]",
     "actions": "Actions",
     "urgency": "Urgency",
-    "dateDown": "Date Incident"
+    "dateDown": "Date Incident",
+    "nameAsset": "Asset Name",
+    "nameIncident": "Incident Name",
+    "incidents": "Incidents"
   },
   "toastr": {
     "unauthorized": "Your session has timed out. Please log in again",

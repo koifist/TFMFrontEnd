@@ -102,6 +102,12 @@ export class AssetsComponent implements OnInit {
           this.dataSource = new MatTableDataSource<Object>(this.assets);
           this.dataSource.paginator = this.paginator;
           this.dataSource.sort = this.sort;
+          this.dataSource.sortingDataAccessor = (item: any, property) => {
+            switch (property) {
+              case 'assetType': return this.translate.instant('constants.' + item.assetType.name);
+              default: return item[property];
+            }
+          };
           this.dataSource.filterPredicate = (
             data: any,
             filter: string

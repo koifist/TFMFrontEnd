@@ -71,6 +71,7 @@
         mat-table
         [dataSource]="dataSource"
         matSort
+        matSortActive="status" matSortDirection="asc"
         class="w-100 mat-elevation-z8"
         *ngIf="!loading"
       >

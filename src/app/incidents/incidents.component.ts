@@ -104,6 +104,14 @@ export class IncidentsComponent implements OnInit {
           this.dataSource = new MatTableDataSource<Object>(this.incidents);
           this.dataSource.paginator = this.paginator;
           this.dataSource.sort = this.sort;
+          this.dataSource.sortingDataAccessor = (item: any, property) => {
+            switch (property) {
+              case 'nameAsset': return item.asset.name;
+              case 'assetType': return this.translate.instant('constants.' + item.asset.assetType.name);
+              case 'status': return !!item.dateEnd;
+              default: return item[property];
+            }
+          };
           this.dataSource.filterPredicate = (
             data: any,
             filter: string

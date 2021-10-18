@@ -37,7 +37,12 @@ export class DashboardComponent implements OnInit {
       ],
       yAxes: [
         {
-          ticks: { fontColor: 'black', maxTicksLimit: 8 },
+          ticks: {
+            fontColor: 'black',
+            maxTicksLimit: 8,
+            beginAtZero: true,
+            precision: 0,
+          },
           gridLines: { color: 'black' },
         },
       ],
@@ -93,19 +98,23 @@ export class DashboardComponent implements OnInit {
   public incMonthColors: Color[] = [
     {
       backgroundColor: 'transparent',
-      borderColor: 'rgb(16, 2, 217)',
-      pointBackgroundColor: 'rgb(16, 2, 217)',
+      borderColor: 'rgba(0,0,128, 0.8)',
+      pointBackgroundColor: 'rgba(0,0,128, 0.9)',
     },
   ];
   public incAssetColors: Color[] = [
     {
       backgroundColor: [
-        'rgba(255,0,0,0.3)',
-        'rgba(60,179,113,0.3)',
-        'rgba(255,165,0,0.3)',
-        'rgba(0,0,255,0.3)',
-        'rgba(238,130,238,0.3)',
-        'rgba(106,90,205,0.3)',
+        'rgba(0,0,0,0.7)',
+        'rgba(0,0,128,0.7)',
+        'rgba(0,0,255,0.7)',
+        'rgba(0,128,0,0.7)',
+        'rgba(0,128,128,0.7)',
+        'rgba(0,255,0,0.7)',
+        'rgba(0,255,255,0.7)',
+        'rgba(128,0,0,0.7)',
+        'rgba(128,0,128,0.7)',
+        'rgba(255,255,0,0.7)',
       ],
     },
   ];
@@ -115,10 +124,11 @@ export class DashboardComponent implements OnInit {
 
   displayedColumns: string[] = [
     'status',
-    'name',
+    'nameIncident',
+    'nameAsset',
     'assetType',
     'criticality',
-    'date',
+    'dateInitStr',
     'mtd',
     'rto',
   ];
@@ -189,27 +199,59 @@ export class DashboardComponent implements OnInit {
     this.dataSource = new MatTableDataSource<Object>(assetFormated);
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+    this.dataSource.sortingDataAccessor = (item: any, property) => {
+      switch (property) {
+        case 'status':
+          if (item.mtdExceeded) {
+            return 4;
+          } else if (item.rtoExceeded) {
+            return 3;
+          } else {
+            return 2;
+          }
+        case 'nameIncident':
+          return item.name;
+        case 'nameAsset':
+          return item.asset.name;
+        case 'assetType':
+          return this.translate.instant(
+            'constants.' + item.asset.assetType.name
+          );
+        case 'criticality':
+          return item.asset.criticality;
+        case 'mtd':
+          return item.asset.mtd;
+        case 'rto':
+          return item.asset.rto;
+        default:
+          return item[property];
+      }
+    };
   }
-  formatAssets(incidents: any){
+  formatAssets(incidents: any) {
     _.forEach(incidents, (incident) => {
       const hourDiff = moment().diff(moment(incident.dateInit), 'hours');
-      if(hourDiff > incident.asset.mtd){
+      if (hourDiff > incident.asset.mtd) {
         incident.mtdExceeded = true;
-      } else if (hourDiff > incident.asset.rto){
+      } else if (hourDiff > incident.asset.rto) {
         incident.rtoExceeded = true;
       }
-      incident.dateInitStr = moment(incident.dateInit).format('YYYY-MM-DD HH:mm');
+      incident.dateInitStr = moment(incident.dateInit).format(
+        'YYYY-MM-DD HH:mm'
+      );
     });
     return incidents;
   }
   setIncMonthData(data: any) {
-    this.incMonthData = [{ data: _.map(data, 'value'), label: 'Amazon' }];
+    this.incMonthData = [{ data: _.map(data, 'value'), label: this.translate.instant("constants.incidents") }];
     this.incMonthLabels = _.map(data, (elem) => {
-      return moment(elem['label']).locale(navigator.language.slice(0,2)).format('L');
+      return moment(elem['label'])
+        .locale(navigator.language.slice(0, 2))
+        .format('L');
     });
   }
   setIncAssetData(data: any) {
-    this.incAssetData = [{ data: _.map(data, 'value'), label: 'Amazon' }];
+    this.incAssetData = [{ data: _.map(data, 'value'), label: this.translate.instant("constants.incidents") }];
     this.incAssetLabels = _.map(data, (data) => {
       return this.translate.instant('constants.' + data['label']);
     });

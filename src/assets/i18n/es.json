@@ -43,7 +43,10 @@
     "rtoExtend": "RTO (Recovery Time Objetive) [hrs]",
     "actions": "Acciones",
     "urgency": "Urgencia",
-    "dateDown": "Fecha Incidente"
+    "dateDown": "Fecha Incidente",
+    "nameAsset": "Nombre del Activo",
+    "nameIncident": "Nombre del Incidente",
+    "incidents": "Incidentes"
   },
   "toastr": {
     "unauthorized": "La sesión ha caducado. Inicie sesión de nuevo.",

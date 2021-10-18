@@ -76,6 +76,7 @@
         mat-table
         [dataSource]="dataSource"
         matSort
+        matSortActive="status" matSortDirection="asc"
         class="w-100 mat-elevation-z8"
         *ngIf="!loading"
       >
@@ -119,8 +120,8 @@
             {{ "incident.confidentiality" | translate }}
           </th>
           <td mat-cell *matCellDef="let element">
-            <mat-icon class="color_red" *ngIf="element?.confidentiality"
-              >done_outline</mat-icon>
+            <mat-icon class="color_red ms-3" *ngIf="element?.confidentiality"
+              >close</mat-icon>
           </td>
         </ng-container>
         <ng-container matColumnDef="integrity">
@@ -128,8 +129,8 @@
             {{ "incident.integrity" | translate }}
           </th>
           <td mat-cell *matCellDef="let element">
-            <mat-icon class="color_red" *ngIf="element?.integrity"
-              >done_outline</mat-icon>
+            <mat-icon class="color_red ms-3" *ngIf="element?.integrity"
+              >close</mat-icon>
           </td>
         </ng-container>
         <ng-container matColumnDef="availability">
@@ -137,8 +138,8 @@
             {{ "incident.availability" | translate }}
           </th>
           <td mat-cell *matCellDef="let element">
-            <mat-icon class="color_red" *ngIf="element?.availability"
-              >done_outline</mat-icon>
+            <mat-icon class="color_red ms-3" *ngIf="element?.availability"
+              >close</mat-icon>
           </td>
         </ng-container>
         <ng-container matColumnDef="actions">
